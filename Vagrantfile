@@ -1,9 +1,8 @@
 Vagrant::Config.run do |config|
   config.vm.box = 'precise64'
-  config.vm.host_name = 'orbital'
   config.vm.forward_port 3000, 3000
   config.vm.forward_port 8080, 8080
-  config.vm.share_folder "groupx", "/home/vagrant/groupx", "~/Projects/groupx"
+  config.vm.share_folder "art250", "/home/vagrant/art250", "~/Projects/rails-arttwo50-staging"
   config.vm.provision :chef_solo do |chef|
     chef.cookbooks_path = "cookbooks"
     chef.json = {
@@ -20,13 +19,12 @@ Vagrant::Config.run do |config|
         ]
       },
       "rails" => {
-        "dir" => "/home/vagrant/groupx"
+        "dir" => "/home/vagrant/art250"
       }
     }
     chef.add_recipe "apt"
     chef.add_recipe "openssl"
-    chef.add_recipe "postgresql"
-    chef.add_recipe "postgresql::contrib"
+    chef.add_recipe "postgresql::server"
     chef.add_recipe "rails"
   end
 end
