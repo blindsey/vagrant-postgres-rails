@@ -1,7 +1,7 @@
 vagrant-dev-env
 ===============
 
-A vagrant development setup for 12.04 LTS (precise64) using chef with postgres, ruby 2.0.0, rails 3.2.x, and redis.
+A vagrant + chef-solo setup for 12.04 LTS (precise64) using postgresql, ruby 1.9.3, rails 3.2.x, imagemagick, and redis.
 
 Installation
 ------------
@@ -12,8 +12,8 @@ Installation
 
 ```
 $ vagrant box add precise64 http://files.vagrantup.com/precise64.box
-$ cd vagrant-dev-env
+$ cd vagrant-postgres-rails
 $ vagrant up
 $ vagrant ssh
 ```
-Note: this assumes your code is located in ~/Projectx/groupx
+Note: this assumes your rails code is located in ~/Project/rails-art250-staging
