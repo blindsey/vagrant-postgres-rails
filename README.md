@@ -16,4 +16,4 @@ $ cd vagrant-postgres-rails
 $ vagrant up
 $ vagrant ssh
 ```
-Note: this assumes your rails code is located in ~/Project/rails-art250-staging
+Note: this assumes your rails code is located in ~/Projects/rails-art250-staging
