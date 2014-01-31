@@ -6,6 +6,11 @@ Vagrant.configure('2') do |config|
   config.vm.network "forwarded_port", guest: 8080, host: 8080
   config.vm.synced_folder "~/Projects/rails-arttwo50-staging", "/home/vagrant/art250"
 
+  config.vm.provider "virtualbox" do |vb|
+    vb.name = 'dev250'
+    vb.memory = 1024
+  end
+
   config.vm.provision :chef_solo do |chef|
     chef.cookbooks_path = "cookbooks"
     chef.json = {
