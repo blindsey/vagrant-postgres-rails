@@ -1,8 +1,11 @@
-Vagrant::Config.run do |config|
+Vagrant.configure('2') do |config|
   config.vm.box = 'precise64'
-  config.vm.forward_port 3000, 3000
-  config.vm.forward_port 8080, 8080
-  config.vm.share_folder "art250", "/home/vagrant/art250", "~/Projects/rails-arttwo50-staging"
+  config.vm.box_url = 'http://files.vagrantup.com/precise64.box'
+  config.vm.hostname = 'dev250'
+  config.vm.network "forwarded_port", guest: 3000, host: 3000
+  config.vm.network "forwarded_port", guest: 8080, host: 8080
+  config.vm.synced_folder "~/Projects/rails-arttwo50-staging", "/home/vagrant/art250"
+
   config.vm.provision :chef_solo do |chef|
     chef.cookbooks_path = "cookbooks"
     chef.json = {
@@ -24,6 +27,7 @@ Vagrant::Config.run do |config|
     }
     chef.add_recipe "apt"
     chef.add_recipe "openssl"
+    chef.add_recipe "postgresql"
     chef.add_recipe "postgresql::server"
     chef.add_recipe "rails"
   end

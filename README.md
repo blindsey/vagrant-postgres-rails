@@ -11,7 +11,6 @@ Installation
 3. Add the VM
 
 ```
-$ vagrant box add precise64 http://files.vagrantup.com/precise64.box
 $ cd vagrant-postgres-rails
 $ vagrant up
 $ vagrant ssh
