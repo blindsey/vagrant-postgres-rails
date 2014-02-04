@@ -11,6 +11,7 @@ Installation
 3. Add the VM
 
 ```
+$ git clone https://github.com/blindsey/vagrant-postgres-rails.git
 $ cd vagrant-postgres-rails
 $ vagrant up
 $ vagrant ssh
