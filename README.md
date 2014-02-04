@@ -1,4 +1,4 @@
-vagrant-dev-env
+vagrant-postgres-rails
 ===============
 
 A vagrant + chef-solo setup for 12.04 LTS (precise64) using postgresql, ruby 1.9.3, rails 3.2.x, imagemagick, and redis.
