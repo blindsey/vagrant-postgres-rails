@@ -33,3 +33,10 @@ package "redis-server"
 execute "bundle_install" do
   command "su vagrant -l -c 'cd #{node["rails"]["dir"]} && bundle'"
 end
+
+cookbook_file "bash_profile" do
+  path "/home/vagrant/.bash_profile"
+  owner "vagrant"
+  group "vagrant"
+  mode "0600"
+end
