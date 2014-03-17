@@ -1,9 +1,12 @@
 package "curl"
 package "git"
 
-execute "rvm install" do
-  command "su vagrant -c 'curl -L https://get.rvm.io | bash -s stable --ruby=1.9.3'"
-  creates "/home/vagrant/.rvm"
+package "ruby1.9.3"
+execute "update-alternatives ruby" do
+  command "update-alternatives --set ruby /usr/bin/ruby1.9.1"
+end
+execute "bundler gem" do
+  command "gem install bundler"
 end
 
 execute "psql create superuser role" do
