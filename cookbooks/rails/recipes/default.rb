@@ -1,9 +1,9 @@
-package "curl"
-package "git"
-
-package "ruby1.9.3"
-execute "update-alternatives ruby" do
-  command "update-alternatives --set ruby /usr/bin/ruby1.9.1"
+package "ruby2.0"
+package "ruby2.0-dev"
+[ "ruby", "gem", "irb" ].each do |cmd|
+  link "/usr/local/bin/#{cmd}" do
+    to "/usr/bin/#{cmd}2.0"
+  end
 end
 execute "bundler gem" do
   command "gem install bundler"

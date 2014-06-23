@@ -1,6 +1,6 @@
 Vagrant.configure('2') do |config|
-  config.vm.box = 'precise64'
-  config.vm.box_url = 'http://files.vagrantup.com/precise64.box'
+  config.vm.box = 'trusty64'
+  config.vm.box_url = 'https://cloud-images.ubuntu.com/vagrant/trusty/current/trusty-server-cloudimg-amd64-vagrant-disk1.box'
   config.vm.hostname = 'dev250'
   config.vm.network "forwarded_port", guest: 3000, host: 3000
   config.vm.network "forwarded_port", guest: 8080, host: 8080
@@ -31,6 +31,7 @@ Vagrant.configure('2') do |config|
       }
     }
     chef.add_recipe "apt"
+    chef.add_recipe "build-essential"
     chef.add_recipe "openssl"
     chef.add_recipe "postgresql"
     chef.add_recipe "postgresql::server"
