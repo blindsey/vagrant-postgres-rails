@@ -5,4 +5,4 @@ export REDISCLOUD_URL=redis://localhost:6379
 export AMAZON_ACCESS_KEY=access
 export AMAZON_SECRET=secret
 export AWS_S3_BUCKET_NAME=com.arttwo50
-
+export AMAZON_HOST=http://com.arttwo50.s3.amazonaws.com
