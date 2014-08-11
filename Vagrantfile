@@ -4,7 +4,7 @@ Vagrant.configure('2') do |config|
   config.vm.hostname = 'dev250'
   config.vm.network "forwarded_port", guest: 3000, host: 3000
   config.vm.network "forwarded_port", guest: 8080, host: 8080
-  config.vm.synced_folder "~/Projects/rails-arttwo50-staging", "/home/vagrant/art250"
+  config.vm.synced_folder "~/Developer/rails-arttwo50-staging", "/home/vagrant/art250"
 
   config.vm.provider "virtualbox" do |vb|
     vb.name = 'dev250'
